@@ -27,6 +27,7 @@ public class LoginFunctionality {
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		System.out.println("New change");
+		System.out.println("My first commit");
 		
 	}
 
