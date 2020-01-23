@@ -1,4 +1,5 @@
 package StepDefinition;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -10,10 +11,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import library.Utility;
 
 public class LoginFunctionality {
 	
-	WebDriver driver;
+	public static WebDriver driver;
+	
 	
 	@Given("user loads orangeHRM url")
 	public void user_loads_orangeHRM_url()
@@ -32,7 +35,7 @@ public class LoginFunctionality {
 	}
 
 	@When("user enters {string} and {string} login credentials")
-	public void user_enters_and_login_credentials(String string1, String string2) 
+	public void user_enters_and_login_credentials(String string1, String string2) throws IOException 
 	{
 		WebElement userid = driver.findElement(By.id("txtUsername"));
 		userid.sendKeys(string1);
@@ -42,7 +45,8 @@ public class LoginFunctionality {
 		
 		WebElement loginbutton = driver.findElement(By.id("btnLogin"));
 		loginbutton.click();
-		    
+		Utility.CaptureScreenshot(driver, "Successfull Login");
+		
 	}
 	
 	
