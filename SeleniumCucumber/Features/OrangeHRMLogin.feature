@@ -1,3 +1,4 @@
+@ignore
 Feature: Login OrangeHRM
 
 Scenario: Verify login functionality of Orange HRM application
